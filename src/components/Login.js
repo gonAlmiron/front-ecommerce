@@ -9,7 +9,6 @@ const Login = (props) =>  {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [id, setId] = useState('')
 
     
 
@@ -22,7 +21,7 @@ const Login = (props) =>  {
       try {
 
         await axios.post("http://localhost:3002/api/auth/login",
-        {username, password, id } 
+        {username, password } 
         )} 
         catch(err) {
           console.log(err.stack)

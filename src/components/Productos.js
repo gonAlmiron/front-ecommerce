@@ -3,7 +3,6 @@ import {useState} from "react"
 import Table from 'react-bootstrap/Table';
 import NuevoProductoDos from "./NuevoProductoDos";
 // import { QRCode } from "antd";
-import axios from "axios";
 
 
 const Productos =  () => {
@@ -23,11 +22,11 @@ const Productos =  () => {
 
     // const url = `http://localhost/3002/api/products/${productos}`
 
-    const borrarProducto = () => {
-      axios.delete(`http://localhost/3002/api/products`)
+    // const borrarProducto = () => {
+    //   axios.delete(`http://localhost/3002/api/products`)
   
 
-    }
+    // }
 
 
   return (
