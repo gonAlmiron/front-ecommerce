@@ -12,7 +12,7 @@ const Login = (props) =>  {
     const handleSubmit = async (e) => {
 
       e.preventDefault();
-
+      localStorage.setItem('username', username);
       try {
           await axios.post("http://localhost:3002/api/auth/login",
           {username, password} 

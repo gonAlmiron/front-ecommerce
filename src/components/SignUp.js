@@ -12,12 +12,14 @@ const SignUp = (props) =>  {
     const handleSubmit = async (e) => {
 
       e.preventDefault();
-      localStorage.setItem('username', username);
+      
       try {
         await axios.post("http://localhost:3002/api/auth/signup",
         {username, password} 
         )} 
         catch(err) {
+          console.log(err.stack)
+          console.log(err.stack)
       }
     }
 

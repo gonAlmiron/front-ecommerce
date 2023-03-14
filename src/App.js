@@ -10,7 +10,7 @@ import Productos from './components/Productos';
 import Chat from './components/chat/ChatPage';
 import socketIO from 'socket.io-client';
 
-const socket = socketIO.connect('http://localhost:3002/api', {transports: ['websocket']});
+const socket = socketIO.connect('http://localhost:3002', {transports: ['websocket']});
 
 
 const App = () => {
