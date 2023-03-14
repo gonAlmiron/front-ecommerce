@@ -40,6 +40,7 @@ const Productos =  () => {
           <th>Producto</th>
           <th>Descripcion</th>
           <th>Precio</th>
+          <th>Edición</th>
         </tr>
       </thead>
 
@@ -50,6 +51,11 @@ const Productos =  () => {
             <td>{prod.name}</td>
             <td>{prod.description}</td>
             <td>{prod.price}</td>
+            <td>
+            <button className="btn btn-secondary mx-2">Editar</button>
+            
+            <button className="btn btn-danger mx-2">Eliminar</button>
+              </td>
             
             {/* <td> <QRCode value={url}/></td> */}
           </tr>
