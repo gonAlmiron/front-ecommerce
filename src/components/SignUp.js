@@ -16,11 +16,14 @@ const SignUp = (props) =>  {
       try {
         await axios.post("http://localhost:3002/api/auth/signup",
         {username, password} 
+       
         )} 
         catch(err) {
           console.log(err.stack)
           console.log(err.stack)
       }
+      setUsername('');
+      setPassword('');
     }
 
   return (
