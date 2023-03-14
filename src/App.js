@@ -7,6 +7,10 @@ import Home from './components/Home'
 import SignUp from './components/SignUp';
 import NuevoProducto from './components/NuevoProducto';
 import Productos from './components/Productos';
+import Chat from './components/chat/ChatPage';
+import socketIO from 'socket.io-client';
+
+const socket = socketIO.connect('http://localhost:3002/api', {transports: ['websocket']});
 
 
 const App = () => {
@@ -21,7 +25,9 @@ const App = () => {
           <Route path='/signup' element={ <SignUp/>} />
           <Route path='/newproduct' element={ <NuevoProducto/>} />
           <Route path='/products' element={ <Productos/>} />
+          <Route path='/chat' element={ <Chat socket={socket}/>} />
         </Routes>
+
 
       </BrowserRouter>
     );

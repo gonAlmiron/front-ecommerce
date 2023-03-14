@@ -9,20 +9,15 @@ const SignUp = (props) =>  {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-  
-
-    
     const handleSubmit = async (e) => {
 
       e.preventDefault();
-
+      localStorage.setItem('username', username);
       try {
-
         await axios.post("http://localhost:3002/api/auth/signup",
         {username, password} 
         )} 
         catch(err) {
-
       }
     }
 
@@ -36,6 +31,7 @@ const SignUp = (props) =>  {
             <input
               type="text"
               name="username"
+              value={username}
               onChange={(e) => {setUsername(e.target.value)}}
               className="form-control mt-1"
               placeholder="Ingrese su usuario"

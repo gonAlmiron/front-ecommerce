@@ -6,32 +6,22 @@ import { Link } from "react-router-dom";
 
 const Login = (props) =>  {
 
-
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    
-
-
-    
     const handleSubmit = async (e) => {
 
       e.preventDefault();
 
       try {
-
-        await axios.post("http://localhost:3002/api/auth/login",
-        {username, password } 
+          await axios.post("http://localhost:3002/api/auth/login",
+          {username, password} 
         )} 
         catch(err) {
           console.log(err.stack)
           console.log(err.message)
       }
-
     }
-
-
-
 
   return (
     <div className="Auth-form-container">
@@ -66,13 +56,10 @@ const Login = (props) =>  {
               <br/>
               <p>No tenes usuario?</p>
               <Link to="/signup">Registrate aquí</Link>
-             
-
+            
             </div>
         </div>
-        
       </form>
-
     </div>
   )
 }
