@@ -134,7 +134,7 @@ useEffect(() => {
                   <div key={index} className={`d-flex p-3 ${message.from}`}>
                     <div className={`card mb-3 shadow border-1 ${message.from}`}>
                       <div className="card-body">
-                        <small className="text-muted">{message.from}: {message.message}</small>
+                        <small className="text-muted"><strong>{message.from}</strong>: {message.message}</small>
                       </div>
                     </div>
                   </div>
