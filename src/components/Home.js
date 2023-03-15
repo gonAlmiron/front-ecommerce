@@ -12,14 +12,16 @@ function Home() {
       const handleSubmit = (e) => {
         e.preventDefault();
         localStorage.setItem('username', username);
-        //sends the username and socket ID to the Node.js server
+
         socket.emit('newUser', { username, socketID: socket.id });
         navigate('/chat');
       };
 
   return (
     <div className='home'>
-      <h1>Home</h1>
+
+        <img src="https://files.fm/u/nx7cfzm4h" alt="imagen fondo" />
+        
     </div>
   );
 }
