@@ -15,7 +15,6 @@ function ChatDos() {
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState([])
   const [storedMessages, setStoredMessages] = useState([])
-  const [firstTime, setfirstTime] = useState(false)
 
   const url = "http://localhost:3002/api/chat/"
 
@@ -36,12 +35,12 @@ function ChatDos() {
   }, [messages])
 
   //Cargamos los mensajes guardados en la BDD la primera vez
-  if(!firstTime){
-    axios.get(url + "messages").then(res => {
-      setStoredMessages(res.data.messages);
+
+    axios.get(url + "messages")
+        .then(res => {
+        setStoredMessages(res.data.messages);
     })
-    setfirstTime(true)
-  }
+
   
 
   const handlerSubmit = (e) => {
