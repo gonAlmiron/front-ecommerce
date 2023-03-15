@@ -35,11 +35,18 @@ function ChatDos() {
   }, [messages])
 
   //Cargamos los mensajes guardados en la BDD la primera vez
+useEffect(() => {
 
-    axios.get(url + "messages")
-        .then(res => {
-        setStoredMessages(res.data.messages);
-    })
+    fetch(url + "messages")
+    .then((resp) => resp.json())
+    .then((data) => {setStoredMessages(data)})
+
+}, [])
+
+    // axios.get(url + "messages")
+    //     .then(res => {
+    //     setStoredMessages(res.messages.data);
+    // })
 
   
 
@@ -122,7 +129,7 @@ function ChatDos() {
                 ))}
 
                 {/* chat stored messages */}
-                {/* <small className="text-center text-muted">... Mensajes guardados ...</small>
+                <small className="text-center text-muted">... Mensajes guardados ...</small>
                 {storedMessages.map((message, index) => (
                   <div key={index} className={`d-flex p-3 ${message.from}`}>
                     <div className={`card mb-3 shadow border-1 ${message.from}`}>
@@ -132,7 +139,7 @@ function ChatDos() {
                     </div>
                   </div>
 
-                ))} */}
+                ))}
 
               </div>
             </div>
