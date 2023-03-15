@@ -22,8 +22,6 @@ const SignUp = (props) =>  {
           console.log(err.stack)
           console.log(err.stack)
       }
-      setUsername('');
-      setPassword('');
     }
 
   return (

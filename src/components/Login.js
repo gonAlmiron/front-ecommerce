@@ -1,13 +1,15 @@
 import React from "react"
 import axios from "axios";
 import {useState} from "react"
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = (props) =>  {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
 
@@ -21,6 +23,7 @@ const Login = (props) =>  {
           console.log(err.stack)
           console.log(err.message)
       }
+      navigate('/');
     }
 
   return (
@@ -49,7 +52,7 @@ const Login = (props) =>  {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <input type="submit" href="/home" className="btn btn-primary"/>
+            <input type="submit" className="btn btn-primary"/>
           
           </div>
           <div className="Auth-route">
