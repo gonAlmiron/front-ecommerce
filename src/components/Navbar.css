@@ -4,14 +4,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    opacity: 0.5;
   }
   
   .menu-bars {
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
-    opacity: 0.5;
   }
   
   .nav-menu {
@@ -24,13 +22,11 @@
     top: 0;
     left: -100%;
     transition: 850ms;
-    opacity: 0.5;
   }
   
   .nav-menu.active {
     left: 0;
     transition: 350ms;
-    opacity: 0.5;
   }
   
   .nav-text {
@@ -40,7 +36,6 @@
     padding: 8px 0px 8px 16px;
     list-style: none;
     height: 60px;
-    opacity: 0.5;
   }
   
   .nav-text a {
@@ -53,17 +48,14 @@
     align-items: center;
     padding: 0 16px;
     border-radius: 4px;
-    opacity: 0.5;
   }
   
   .nav-text a:hover {
     background-color: #1a83ff;
-    opacity: 0.5;
   }
   
   .nav-menu-items {
     width: 100%;
-    opacity: 0.5;
   }
   
   .navbar-toggle {
@@ -73,12 +65,10 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    opacity: 0.5;
   }
   
   span {
     margin-left: 16px;
-    opacity: 0.5;
   }
 
   .titulo {
@@ -94,7 +84,6 @@
     overflow: hidden;
     line-height: 10px;
     max-height:20px;
-    opacity: 0.5;
   }
 
   .App-header {
@@ -109,7 +98,6 @@
     color: white;
     text-align: center;
     max-height:20px;
-    opacity: 0.5;
    
   }
 
