@@ -1,21 +1,19 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 function Home() {
  
 
-    const Home = ({ socket }) => {
-      const navigate = useNavigate();
-      const [username, setUsername] = useState('');
+    // const Home = ({ socket }) => {
+    //   const navigate = useNavigate();
+    //   const [username, setUsername] = useState('');
     
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        localStorage.setItem('username', username);
+    //   const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     localStorage.setItem('username', username);
 
-        socket.emit('newUser', { username, socketID: socket.id });
-        navigate('/chat');
-      };
+    //     socket.emit('newUser', { username, socketID: socket.id });
+    //     navigate('/chat');
+    //   };
 
   return (
     <div className='home'>
@@ -25,6 +23,6 @@ function Home() {
     </div>
   );
 }
-}
+
 
 export default Home
