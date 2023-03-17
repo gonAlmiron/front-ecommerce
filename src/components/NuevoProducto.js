@@ -1,12 +1,17 @@
+import { useState } from "react"
 import React from "react"
-import axios from "axios";
-import {useState} from "react"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import axios from "axios";
 
 
-const NuevoProductoDos = (props) =>  {
+const NuevoProductoDos = () => {
 
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
@@ -14,7 +19,7 @@ const NuevoProductoDos = (props) =>  {
 
     
     const handleSubmit = async (e) => {
-      e.preventDefault();
+
       try {
         await axios.post("http://localhost:3002/api/products",
         {name, description, price}
@@ -25,29 +30,69 @@ const NuevoProductoDos = (props) =>  {
             console.log(err.stack)
       }
     }
+    
+    return(
+        <>
+        <div className="d-grid gap-2">
+            <Button variant="secondary" size="lg" onClick={handleShow}>
+            Ingresar nuevo producto
+            </Button>
+        </div>
+        <Modal show={show} onHide={handleClose} >
 
-  return (
-    <div className="container my-5">
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3">
-        <Form.Label>Product Name</Form.Label>
-        <Form.Control type="text" name="name" placeholder="Enter product"  onChange={(e) => {setName(e.target.value)}}/>
-      </Form.Group>
+        <Modal.Header closeButton>
+          <Modal.Title>Nuevo Producto</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                placeholder="Ingrese el nombre"
+                onChange={(e) => {setName(e.target.value)}}
+              />
+            </Form.Group>
 
-      <Form.Group className="mb-3" >
-        <Form.Label>Description</Form.Label>
-        <Form.Control type="text" name="description" placeholder="Description"  onChange={(e) => {setDescription(e.target.value)}}/>
-      </Form.Group>
-      <Form.Group className="mb-3" >
-        <Form.Label>Price</Form.Label>
-        <Form.Control name="price" type="number" placeholder="Price"  onChange={(e) => {setPrice(e.target.value)}}/>
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
-    </div>
-  );
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Precio</Form.Label>
+              <Form.Control
+                type="number"
+                name="price"
+                placeholder="Ingrese el precio"
+                onChange={(e) => {setPrice(e.target.value)}}
+                />
+            </Form.Group>
+
+            <Form.Group
+              className="mb-3"
+            >
+              <Form.Label>Descripción</Form.Label>
+              <Form.Control 
+              placeholder="Ingrese la descripción"
+              name="description"
+              type="text"
+              rows={3} 
+              onChange={(e) => {setDescription(e.target.value)}} 
+              />
+            </Form.Group>
+            <Button type="submit"variant="primary" onClick={handleClose}>
+            Ingresar producto
+          </Button>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          
+
+        </Modal.Footer>
+      </Modal>
+        
+        </>
+    )
 }
 
 export default NuevoProductoDos
