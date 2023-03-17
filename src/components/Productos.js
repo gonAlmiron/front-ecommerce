@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import {useState} from "react"
 import Table from 'react-bootstrap/Table';
-import NuevoProductoDos from "./NuevoProductoDos";
+import NuevoProducto from "./NuevoProducto";
 // import { QRCode } from "antd";
 
 
@@ -32,7 +32,7 @@ const Productos =  () => {
   return (
 
       <>
-      <NuevoProductoDos/>
+      <NuevoProducto/>
 
          <Table striped bordered hover variant="dark" className="my-4">
       <thead>
