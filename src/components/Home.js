@@ -1,5 +1,5 @@
 import React from 'react';
-import fondoITdos from '../fondoITdos.jpg'
+// import fondoITdos from '../fondoITdos.jpg'
 
 function Home() {
  
@@ -18,8 +18,8 @@ function Home() {
 
   return (
     <div className='home'>
-
-<img src={fondoITdos} className="photo"  alt="logo" />
+{/* 
+<img src={fondoITdos} className="photo"  alt="logo" /> */}
         
     </div>
   );
