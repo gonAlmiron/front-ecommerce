@@ -17,9 +17,9 @@ const IngresoListContainer = () => {
     console.log(ingresos)
 
     return(
-        <>
+        <div className="container my-8">
             <IngresoList ingresos={ingresos}/>
-        </>
+        </div>
     )
     }
 

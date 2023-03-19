@@ -9,6 +9,7 @@ import Productos from './components/Productos';
 import ChatDos from './components/chatDos/ChatDos';
 import socketIO from 'socket.io-client';
 import IngresoListContainer from './components/ingresos/IngresoListContainer'
+import IngresoDetailContainer from './components/ingresos/IngresoDetailContainer';
 
 const socket = socketIO.connect('http://localhost:3002', {transports: ['websocket']});
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/products' element={ <Productos/>} />
           <Route path='/chat' element={ <ChatDos socket={socket}/>} />
           <Route path='/ingresos' element={ <IngresoListContainer/>} />
+          <Route path='/ingresodetail/:id' element={ <IngresoDetailContainer/>} />
         </Routes>
 
 
