@@ -10,7 +10,15 @@
   text-decoration: none;
 }
 
-
+.printer{
+  font-family: arial;
+  font-style: italic;
+  font-size: 30px;
+  margin: 25px;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+}
 
 .home,
 .reports,
